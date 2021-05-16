@@ -1,6 +1,14 @@
 // class ApiService {
 //     constructor() {
 //         this.baseURL = "http://localhost:3000";
+//         this.classroomURL = "http://localhost:3000/classrooms";
+//         this.childrenURL = "http://localhost:3000/children";
+//         this.teacherURL = "http://localhost:3000/teachers";
+//     }
+
+//     getAllClassrooms() {
+//         return fetch(this.baseURL + "/classrooms")
+//         .then(response => response.json)
 //     }
 
 //     getAllChildren() {
@@ -25,6 +33,26 @@
 //         })
 //         .then(response => response.json())
 //     }
+
+//     createNewChild(child) {
+//         return fetch(this.baseURL + "/children", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "Application/json",
+//             },
+//             body: JSON.stringify({
+//                 child: child
+//             })
+//         })
+//         .then(response => response.json())
+//     }
+
+    
+
+
+
+
+
 
 //     createNewClassroom(classroom) {
 //         return fetch(this.baseURL + "/classrooms", {

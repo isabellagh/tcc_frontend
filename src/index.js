@@ -1,7 +1,42 @@
-const childrenURL = "http://localhost:3000/api/v1/children"
+const api = new ApiService
+console.log("api", api)
+ApiService.getAllClassrooms()
 
-// const api = new ApiService
-// console.log("api", api)
+// click on the button "add a child" in the classrooms table
+
+const tBody = document.querySelector("tbody")
+
+let newClassroomForm = document.getElementById("new-Classroom-form")
+newClassroomForm.addEventListener("submit", function(event) {
+  event.preventDefault()
+  api.createNewClassroom(event.target)
+  .then(response => {
+    let currentClassroom = new Classroom(response)
+    currentClassroom.addClassroomToDom()
+  })
+})
+
+document.addEventListener("click", function(event) {
+  if(event.target.matches(".classrom-h2")) {
+    event.preventDefault()
+    console.log(event.target)
+  }
+})
+
+let newChildForm = document.getElementById("new-child-form")
+newChildForm.addEventListener("submit", function(event) {
+  event.preventDefault()
+  createNewChild(event.target)
+})
+
+const childrenURL = "http://localhost:3000/api/v1/children"
+function createNewChild(child_info) {
+
+  fetch()
+}
+
+
+
 // let newClassroomForm = document.getElementById("new-classroom-form")
 // newClassroomForm.addEventListener("submit", function(event) {
 //   event.preventDefault()

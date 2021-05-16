@@ -1,9 +1,5 @@
 
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <title>
@@ -16,54 +12,42 @@
         <script src="src/child.js"></script>
         <script src="src/teacher.js"></script>
         <script defer src="src/index.js"></script>
-    </head>
-    
+    </head>    
     <body>
-
         <div id="child-container">
-
             <form id="create-child-form">
                 <h3>Add a child!</h3>
             
                 <input id='input-name' type="text" name="name" value="" placeholder="Enter your child name..." class="input-text">
-                <br><br>
+                <br>
                 <input id='input-age' name="age" rows="8" cols="80" value="" placeholder="Enter the child age...">
-                <br><br>
+                <br>
                 <input id='input-avatar' type="text" name="image" value="" placeholder="Enter the child picture..." class="input-text">
-                <br><br>
-            
+                <br>
                 <select id="classrooms" name="classrooms">
                   <option value="1">Toddler 1</option>                  
                 </select>
-                <br><br>
-            
+                <br>       
                 <input id='create-button' type="submit" name="submit" value="Add a New child" class="submit">
               </form>
-
         </div>
+<br><br><br>
+        <!-- <div class="container mx-auto"> -->
 
-        <div id="classroom-container">
-
-            <form id="classroom-list">
-                <h3>Classrooms</h3>
-
-                <ul>
-                    <li id="infant-a">Infant A</li>
-                    <li id="infant-b">Infant B</li>
-                    <li id="toddler-1">Toddler 1</li>
-                    <li id="toddler-2">Toddler 2</li>
-                    <li id="toddler-3">Toddler 3</li>
-                    <li id="pre-k">Pre-K</li>
-                </ul>
-            
-                <!-- <input id='input-room-name' type="text" name="name" value="" placeholder="Enter your classroom name..." class="input-text">
-                <br><br>
-                <input id='input-age' type="text" name="age" value="" placeholder="Enter the classroom age...">
-                <br><br>
-            
-                <input id='create-button' type="submit" name="submit" value="Add a New classroom" class="submit"> -->
-              </form>
-
+            <!-- <form id="classroom-list"> -->
+                <h2 class="classroom-h2">Add a new classroom</h2>
+                <form id="new-classroom-form">
+                    <div id="parent-div">
+                        <div class="input" id="form-inputs" data-id=`${input-counter}`>
+                            <input type="text" name="room_name" placeholder="Classroom name">
+                            <br>
+                            <input type="text" name="age" placeholder="Classroom age">
+                            <br>
+                        </div>
+                    </div>
+                    <button type="button" name="submit">Submit</button>
+                </form>
+              <!-- </form> -->
         </div>
 
         <!--
@@ -185,12 +169,14 @@ HEADER -->
     </div>
   </nav>
   <br><br>
+
   <!-- classroms table -->
+
   <div class="flex flex-col">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-          <table class="min-w-full divide-y divide-gray-200">
+          <table id="classroom-table" class="min-w-full divide-y divide-gray-200">
             <tbody class="bg-white divide-y divide-gray-200">
               <tr>
                 <td class="px-6 py-4 whitespace-nowrap">
@@ -200,13 +186,13 @@ HEADER -->
                     </div>
                     <div class="ml-4">
                       <div class="text-sm font-medium text-gray-900">
-                        Infant A
+                        room_name:
                       </div>
                   </div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
                   <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                    Not Full
+                    full:
                   </span>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
@@ -318,7 +304,9 @@ HEADER -->
                   <a href="#" class="text-indigo-600 hover:text-indigo-900">Add a child</a>
                 </td>
               </tr>
-            </tbody>
+            </tbody><td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
+                <a href="#" class="text-indigo-600 hover:text-indigo-900">Add a new classroom</a>
+              </td>
           </table>
         </div>
       </div>
