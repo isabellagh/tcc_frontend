@@ -8,7 +8,7 @@
         <title>
             Timonium C.C.
         </title>
-        <link  rel="stylesheet" type="text/css" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+        <!-- <link  rel="stylesheet" type="text/css" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"> -->
         <!-- <link rel="stylesheet" href="css/styles.css" /> -->
         <!-- <script src="src/ApiService.js"></script>
         <script src="src/classroom.js"></script>
@@ -19,23 +19,50 @@
     <body>
 
         <div id="child-container">
-
+            <form id="create-child-form">
+                <h3>Add a child!</h3>
+            
+                <input id='input-name' type="text" name="name" value="" placeholder="Enter your child name..." class="input-text">
+                <br>
+                <input id='input-age' name="age" rows="8" cols="80" value="" placeholder="Enter the child age...">
+                <br>
+                <input id='input-avatar' type="text" name="image" value="" placeholder="Enter the child picture..." class="input-text">
+                <br>
+                <select id="classrooms" name="classrooms">
+                  <option value="2">Infant A</option>
+                  <option value="3">Infant B</option>
+                  <option value="1">Toddler 1</option>
+                  <option value="4">Toddler 2</option>                  
+                </select>
+                <br>       
+                <input id='create-button' type="submit" name="submit" value="submit" class="submit">
+                <br><br>
+            </form>
         </div>
+
+    
+
+
+
+
+
+
+
+
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        
-        HEADER --> 
-<br><br><br>
+        <!-- HEADER  -->
+
 <!-- This example requires Tailwind CSS v2.0+ -->
-<nav class="bg-gray-800">
+<!-- <nav class="bg-gray-800">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
-        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden"> -->
           <!-- Mobile menu button-->
-          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
+          <!-- <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span> -->
             <!--
               Icon when menu is closed.
   
@@ -43,9 +70,9 @@
   
               Menu open: "hidden", Menu closed: "block"
             -->
-            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <!-- <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            </svg> -->
             <!--
               Icon when menu is open.
   
@@ -53,7 +80,7 @@
   
               Menu open: "block", Menu closed: "hidden"
             -->
-            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <!-- <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -64,18 +91,18 @@
             <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow">
           </div>
           <div class="hidden sm:block sm:ml-6">
-            <div class="flex space-x-4">
+            <div class="flex space-x-4"> -->
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Classrooms</a>
+              <!-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Classrooms</a> -->
   
               <!-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a> -->
   
               <!-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a> -->
   
               <!-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a> -->
-            </div>
+            <!-- </div>
           </div>
-        </div>
+        </div> -->
         <!-- <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"> -->
           <!-- <button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
             <span class="sr-only">View notifications</span> -->
@@ -110,36 +137,36 @@
               <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
               <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
             </div> -->
-          </div>
+          <!-- </div>
         </div>
       </div>
-    </div>
+    </div> -->
   
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="sm:hidden" id="mobile-menu">
-      <div class="px-2 pt-2 pb-3 space-y-1">
+    <!-- <div class="sm:hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1"> -->
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Classrooms</a>
+        <!-- <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Classrooms</a> -->
   
         <!-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a> -->
   
         <!-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a> -->
   
         <!-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a> -->
-      </div>
+      <!-- </div>
     </div>
   </nav>
-  <br><br>
+  <br><br> -->
 
   <!-- classroms table -->
 
-  <div class="flex flex-col">
+  <!-- <div class="flex flex-col">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
           <table id="classroom-table" class="min-w-full divide-y divide-gray-200">
-            <tbody class="bg-white divide-y divide-gray-200">
-              <tr>
+            <tbody class="bg-white divide-y divide-gray-200"> -->
+              <!-- <tr>
                 <td class="px-6 py-4 whitespace-nowrap">
                   <div class="flex items-center">
                     <div class="flex-shrink-0 h-10 w-10">
@@ -153,8 +180,8 @@
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
                   <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                    full:
-                  </span>
+                    full: -->
+                  <!-- </span>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <a href="#" class="text-indigo-600 hover:text-indigo-900">Add a child</a>
@@ -169,8 +196,8 @@
                     <div class="ml-4">
                       <div class="text-sm font-medium text-gray-900">
                         Infant B
-                      </div>
-                  </div>
+                      </div> -->
+                  <!-- </div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
                   <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
@@ -184,8 +211,8 @@
               <tr>
                 <td class="px-6 py-4 whitespace-nowrap">
                   <div class="flex items-center">
-                    <div class="flex-shrink-0 h-10 w-10">
-                      <img class="h-10 w-10 rounded-full" src="http://pm1.narvii.com/6452/675077a62aa6c272e715363179373ea92dfbef76_00.jpg" alt="">
+                    <div class="flex-shrink-0 h-10 w-10"> -->
+                      <!-- <img class="h-10 w-10 rounded-full" src="http://pm1.narvii.com/6452/675077a62aa6c272e715363179373ea92dfbef76_00.jpg" alt="">
                     </div>
                     <div class="ml-4">
                       <div class="text-sm font-medium text-gray-900">
@@ -198,8 +225,8 @@
                     Not Full
                   </span>
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <a href="#" class="text-indigo-600 hover:text-indigo-900">Add a child</a>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"> -->
+                  <!-- <a href="#" class="text-indigo-600 hover:text-indigo-900">Add a child</a>
                 </td>
               </tr>
               <tr>
@@ -213,8 +240,8 @@
                         Toddler 2
                       </div>
                   </div>
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap">
+                </td> -->
+                <!-- <td class="px-6 py-4 whitespace-nowrap">
                   <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                     Not Full
                   </span>
@@ -229,8 +256,8 @@
                     <div class="flex-shrink-0 h-10 w-10">
                       <img class="h-10 w-10 rounded-full" src="http://pm1.narvii.com/6452/675077a62aa6c272e715363179373ea92dfbef76_00.jpg" alt="">
                     </div>
-                    <div class="ml-4">
-                      <div class="text-sm font-medium text-gray-900">
+                    <div class="ml-4"> -->
+                      <!-- <div class="text-sm font-medium text-gray-900">
                         Toddler 3
                       </div>
                   </div>
@@ -244,8 +271,8 @@
                   <a href="#" class="text-indigo-600 hover:text-indigo-900">Add a child</a>
                 </td>
               </tr>
-              <tr>
-                <td class="px-6 py-4 whitespace-nowrap">
+              <tr> -->
+                <!-- <td class="px-6 py-4 whitespace-nowrap">
                   <div class="flex items-center">
                     <div class="flex-shrink-0 h-10 w-10">
                       <img class="h-10 w-10 rounded-full" src="http://pm1.narvii.com/6452/675077a62aa6c272e715363179373ea92dfbef76_00.jpg" alt="">
@@ -260,8 +287,8 @@
                   <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                     Not Full
                   </span>
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                </td> -->
+                <!-- <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <a href="#" class="text-indigo-600 hover:text-indigo-900">Add a child</a>
                 </td>
               </tr>
@@ -275,18 +302,18 @@
   </div>
 
   <br><br><br><br>
-  <H1>List of children per classroom</H1>
+  <H1>List of children per classroom</H1> -->
   
 <!-- This example requires Tailwind CSS v2.0+ -->
-<br><br>
+<!-- <br><br>
 <div class="flex flex-col">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
           <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
-              <tr>
-                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <tr> -->
+                <!-- <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Name
                 </th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -300,8 +327,8 @@
                 </th>
                 <th scope="col" class="relative px-6 py-3">
                   <span class="sr-only">Edit</span>
-                </th>
-              </tr>
+                </th> -->
+              <!-- </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
               <tr>
@@ -313,17 +340,17 @@
                     <div class="ml-4">
                       <div class="text-sm font-medium text-gray-900">
                         Maggie Simpson
-                      </div>
+                      </div> -->
                       <!-- <div class="text-sm text-gray-500">
                         jane.cooper@example.com
                       </div> -->
-                    </div>
+                    <!-- </div>
                   </div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
-                  <div class="text-sm text-gray-900">1</div>
+                  <div class="text-sm text-gray-900">1</div> -->
                   <!-- <div class="text-sm text-gray-500">Optimization</div> -->
-                </td>
+                <!-- </td>
                 <td class="px-6 py-4 whitespace-nowrap">
                   <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                     No
@@ -336,14 +363,15 @@
                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                 </td>
-              </tr>
+              </tr> -->
   
               <!-- More people... -->
-            </tbody>
+            <!-- </tbody>
           </table>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
     </body>
 </html>
+
