@@ -1,14 +1,18 @@
 const classroomsURL = "http://localhost:3000/api/v1/classrooms"
 const childrenURL = "http://localhost:3000/api/v1/children"
 
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => 
+function init(){
   // fetch and load children
     getchildren()
 
     const createChildForm = document.querySelector("#create-child-form")  //query the form
 
-    createChildForm.addEventListener("submit", (e) => createFormHandler(e))
-  })
+    createChildForm.addEventListener("submit", function(e) {
+      debugger
+      createFormHandler(e)
+    })
+  }
 
   function getchildren() {
       fetch(childrenURL)
@@ -16,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(children => {                 //getting my children array
         children.data.forEach(child => {  // iterate over the response ans show the data
             // double check how your data is nested in the console so you can successfully access the attributes of each individual object
-          renderChildInfo(child)
+          
+            renderChildInfo(child)
           })
       })
   }
@@ -31,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <br><br>`;
 
-    document.querySelector('#child-container').innerHTML += childMarkup
+    document.querySelector('#child-child-container').innerHTML += childMarkup
   }
 
   function createFormHandler(e) {     // handles the inputs
@@ -46,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function postFetch(name, age, avatar, classroom_id) {
     // build body outside of fetch
     const bodyData = {name, age, avatar, classroom_id}
+    // debugger
     
     fetch(childrenURL, {
       method: "POST",
@@ -64,3 +70,5 @@ document.addEventListener('DOMContentLoaded', () => {
       renderChildInfo(childData)
     })
   }
+
+init()

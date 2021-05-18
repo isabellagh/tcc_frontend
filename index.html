@@ -14,7 +14,7 @@
         <script src="src/classroom.js"></script>
         <script src="src/child.js"></script>
         <script src="src/teacher.js"></script> -->
-        <script type="text/javascript" src="index.js"></script>
+       
     </head>  
     <body>
 
@@ -22,11 +22,11 @@
             <form id="create-child-form">
                 <h3>Add a child!</h3>
             
-                <input id='input-name' type="text" name="name" value="" placeholder="Enter your child name..." class="input-text">
+                <input id='input-name' type="text" name="name" value="" placeholder="Enter your child name..." class="input-text"/>
                 <br>
-                <input id='input-age' name="age" rows="8" cols="80" value="" placeholder="Enter the child age...">
+                <input id='input-age' name="age" rows="8" cols="80" value="" placeholder="Enter the child age..."/>
                 <br>
-                <input id='input-avatar' type="text" name="image" value="" placeholder="Enter the child picture..." class="input-text">
+                <input id='input-avatar' type="text" name="image" value="" placeholder="Enter the child picture..." class="input-text"/>
                 <br>
                 <select id="classrooms" name="classrooms">
                   <option value="2">Infant A</option>
@@ -35,14 +35,18 @@
                   <option value="4">Toddler 2</option>                  
                 </select>
                 <br>       
-                <input id='create-button' type="submit" name="submit" value="submit" class="submit">
+                <input type="submit"/>
                 <br><br>
             </form>
+            <div id="child-child-container">
+
+            </div>
         </div>
 
     
 
-
+        <script type="text/javascript" src="src/child.js"></script>
+        <script type="text/javascript" src="src/index.js"></script>
 
 
 
