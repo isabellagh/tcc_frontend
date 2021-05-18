@@ -9,7 +9,7 @@ function init(){
     const createChildForm = document.querySelector("#create-child-form")  //query the form
 
     createChildForm.addEventListener("submit", function(e) {
-      debugger
+      // debugger
       createFormHandler(e)
     })
   }
@@ -50,7 +50,7 @@ function init(){
 
   function postFetch(name, age, avatar, classroom_id) {
     // build body outside of fetch
-    const bodyData = {name, age, avatar, classroom_id}
+    const bodyData = {child: {name, age, avatar, classroom_id}}
     // debugger
     
     fetch(childrenURL, {

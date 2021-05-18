@@ -1,6 +1,5 @@
 class Child {
-    constructor(child) { 
-        debugger       
+    constructor(child) {        
         this.id = child.id
         this.name = child.attributes.name
         this.age = child.attributes.age
