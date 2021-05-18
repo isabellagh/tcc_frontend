@@ -1,18 +1,20 @@
 const classroomsURL = "http://localhost:3000/api/v1/classrooms"
 const childrenURL = "http://localhost:3000/api/v1/children"
 
-// document.addEventListener('DOMContentLoaded', () => 
-function init(){
-  // fetch and load children
-    getchildren()
-
+document.addEventListener('DOMContentLoaded', () => {
+  getchildren()
+  // function init(){
+    // fetch and load children
+    // getchildren()
+    
     const createChildForm = document.querySelector("#create-child-form")  //query the form
-
-    createChildForm.addEventListener("submit", function(e) {
+    
+    createChildForm.addEventListener("submit", (e) => createFormHandler(e))
+})
       // debugger
-      createFormHandler(e)
-    })
-  }
+      // createFormHandler(e)
+  //   })
+  // }
 
   function getchildren() {
       fetch(childrenURL)
@@ -71,4 +73,4 @@ function init(){
     })
   }
 
-init()
+// init()
