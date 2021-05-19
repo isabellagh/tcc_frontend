@@ -2,7 +2,7 @@ const classroomsURL = "http://localhost:3000/api/v1/classrooms"
 const childrenURL = "http://localhost:3000/api/v1/children"
 
 document.addEventListener('DOMContentLoaded', () => {
-  getchildren()
+  getChildren()
   // function init(){
     // fetch and load children
     // getchildren()
@@ -16,13 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
   //   })
   // }
 
-  function getchildren() {
+  function getChildren() {  //creating a new child
       fetch(childrenURL)
       .then(response => response.json())
       .then(children => {                 //getting my children array
         children.data.forEach(child => {  // iterate over the response ans show the data
             // double check how your data is nested in the console so you can successfully access the attributes of each individual object
-          
+          // debugger
+          let newChild = new Child(child)  
+          // debugger   //creates a new instance of a Child class. child object and the attributes
+
             renderChildInfo(child)
           })
       })
@@ -52,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function postFetch(name, age, avatar, classroom_id) {
     // build body outside of fetch
-    const bodyData = {child: {name, age, avatar, classroom_id}}
+    const bodyData = {name, age, avatar, classroom_id}  // the keys sent back (need to be the same as in the schema)
     // debugger
     
     fetch(childrenURL, {
