@@ -3,9 +3,12 @@ const childrenURL = "http://localhost:3000/api/v1/children"
 
 document.addEventListener('DOMContentLoaded', () => {
   getChildren()
+  getClassrooms()
   // function init(){
     // fetch and load children
     // getchildren()
+    const createClassroomForm = document.querySelector("#create-classroom-form")  //query the form  
+    createClassroomForm.addEventListener("submit", (e) => classroomFormHandler(e))
     
     const createChildForm = document.querySelector("#create-child-form")  //query the form  
     createChildForm.addEventListener("submit", (e) => createFormHandler(e))
@@ -34,6 +37,23 @@ document.addEventListener('DOMContentLoaded', () => {
           })
       })
   }
+
+  function getClassrooms() {  //creating a new child
+    fetch(classroomsURL)
+    .then(response => response.json())
+    .then(classrooms => {                 //getting my classroom array
+      classrooms.data.forEach(classroom => {  // iterate over the response ans show the data
+          // double check how your data is nested in the console so you can successfully access the attributes of each individual object
+        // debugger
+        const newClassroom = new Classroom(classroom)  
+        // debugger   //creates a new instance of a Classroom class. classroom object and the attributes
+
+          // // // renderClassroomInfo(classroom)
+        document.querySelector('#classroom-classroom-container').innerHTML += newClassroom.renderClassroomTable();
+
+        })
+    })
+}
 
   // function renderChildInfo(child) {
   //   const childMarkup = `
@@ -72,14 +92,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderUserProfile() {
     console.log(localStorage.getItem('jwt_token'));
-    // fetch('http://localhost:3000/api/v1/profile', {
-    //   method: 'GET',
-    //   headers: { Authorization: `Bearer ${localStorage.getItem('jwt_token')}`}
-    // })
-    // .then(response => response.json())
-    // .then(json => {
-    //   alert(`Welcome back ${json.user.data.attributes.name}`)
-    // })
+    fetch('http://localhost:3000/api/v1/profile', {
+      method: 'GET',
+      headers: { Authorization: `Bearer ${localStorage.getItem('jwt_token')}`}
+    })
+    .then(response => response.json())
+    .then(json => {
+      alert(`Welcome back ${json.user.data.attributes.name}`)
+    })
   }
 
   function createFormHandler(e) {     // handles the inputs
@@ -116,6 +136,44 @@ document.addEventListener('DOMContentLoaded', () => {
           document.querySelector('#child-child-container').innerHTML += newChild.renderChildInfo();
 
     })
-  }
+
+
+
+    function classroomFormHandler(e) {     // handles the inputs
+      e.preventDefault()            
+      const roomNameInput = document.querySelector('#input-room-name').value
+      const ageInput = document.querySelector('#input-age').value
+      const teacherNameInput = document.querySelector('#input-teacher-name').value
+      const full = (document.querySelector('#full').value)
+      classroomPostFetch(roomNameInput, ageInput, teacherNameInput, full)
+    }
+  
+    function classroomPostFetch(room_name, age, teacher_name, full) {
+      // build body outside of fetch
+      const bodyData = {classroom: {room_name, age, teacher_name, full}}  // the keys sent back (need to be the same as in the schema)
+      // debugger
+      
+      fetch(classroomsURL, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(bodyData) // all attributes
+          // name: name,
+          // age: age,
+          // avatar: avatar,
+          // classroom_id: classroom_id  
+      })
+      .then(response => response.json())
+      .then(classroom => {
+        // debugger
+        // console.log(classroom);
+        // const classroomData = classroom.data
+        const newClassroom = new Classroom(classroom.data)
+        // render json response
+        // renderclassroomInfo(classroomData)
+            document.querySelector('#classroom-classroom-container').innerHTML += newClassroom.renderClassroomTable();
+  
+      })
+
+  }}
 
 // init()

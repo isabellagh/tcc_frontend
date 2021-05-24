@@ -44,7 +44,6 @@ class Child {
         </div>
         </div>
         </div>
-        
         `
 
         // return `
