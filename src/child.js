@@ -25,6 +25,8 @@ class Child {
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                <button type="button" name="delete" class="btn btn-sm btn-outline-secondary">Delete</button>
+
               </div>
               <small class="text-muted">${this.classroom.room_name}</small>
             </div>

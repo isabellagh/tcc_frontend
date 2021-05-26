@@ -26,7 +26,7 @@ class Classroom {
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
+                <button type="button" name="delete" class="btn btn-sm btn-outline-secondary">Delete</button>
                 </div>
             </div>
           </div>
