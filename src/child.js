@@ -1,17 +1,5 @@
 class Child {
 
-    // constructor(child, childAttributes) { 
-    //     // debugger       
-    //     this.id = child.id             // top level
-    //     // debugger                    
-    //     this.name = childAttributes.name
-    //     this.age = childAttributes.age
-    //     this.avatar = childAttributes.avatar
-    //     this.classroom = childAttributes.classroom
-    //       Child.all.push(this)
-    //     //   debugger
-    // }
-
     constructor(child) {        
         this.id = child.id
         this.name = child.attributes.name
@@ -43,17 +31,7 @@ class Child {
           </div>
         </div>
         </div>
-        </div>
-        `
-
-        // return `
-        // <div data-id=${this.id}>
-        //   <img src=${this.avatar} height="200" width="250">
-        //   <h3>${this.name}</h3>
-        //   <p>${this.classroom.room_name}</p>
-        //   <button data-id=${this.id}>edit</button>
-        // </div>
-        // <br><br>`;
+        </div>`
     }
 
 }

@@ -14,7 +14,8 @@ class Classroom {
         // debugger
 
        return `
-      <div class="card" style="width: 18rem;">
+      <div class="card-group" >
+      <div class="card">
       <img src="https://playtolearnpreschool.us/wp-content/uploads/2015/07/IMG_4277-1024x732.jpg" class="card-img-top" alt="...">
         <div class="card mb-4 shadow-sm">
           <div class="card-body">
@@ -25,10 +26,12 @@ class Classroom {
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-              </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
+                </div>
             </div>
           </div>
         </div>
+      </div>
       </div>`
     }
 }

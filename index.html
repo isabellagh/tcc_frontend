@@ -103,15 +103,15 @@
       <form id="create-classroom-form" class="row g-3">
         <div class="col-12">
           <label for="roomNameInput" class="form-label"></label>
-          <input type="text" class="form-control" id="input-room-name" placeholder="Classroom's name">
+          <input type="text" name="roomNameInput" class="form-control" id="input-room-name" placeholder="Classroom's name">
         </div>
         <div class="col-12">
           <label for="ageInput" class="form-label"></label>
-          <input type="text" class="form-control" id="input-age" placeholder="Classroom's age range">
+          <input type="text" name="ageInput" class="form-control" id="input-age" placeholder="Classroom's age range">
         </div>
         <div class="col-12">
           <label for="teacherNameInput" class="form-label"></label>
-          <input type="text" class="form-control" id="input-teacher-name'" placeholder="Classroom's age">
+          <input type="text" name="teacherNameInput" class="form-control" id="input-teacher-name'" placeholder="Classroom's teacher">
         </div>
         <div class="col-12">
           <br>
@@ -124,30 +124,20 @@
 </section>
 
 <!-- CLASSROOM DATA TABLE -->
+<div class="card-group">
+  <div class="card">
 <div class="album py-5 bg-light">
   <div class="container" id="classroom-classroom-container">
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <div class="col">
-        <!-- <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-          <div class="card-body">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-              </div>
-              <small class="text-muted">9 mins</small>
-            </div>
-          </div>
-        </div> -->
+        <!-- renderClassroomTable() -->
       </div>
      </div>
   </div>
 </div>
-
+</div>
+</div>
 
 <!-- CHILD FORM -->
   <section class="py-5 text-center container">
@@ -172,7 +162,7 @@
             <label for="input-classroom" class="form-label"></label>
             <select id="input-classroom" class="form-select">
               <option selected>Classroom...</option>
-              <option value="classrooms" id="classrooms"></option>
+              <option value="1" id="Toddler 1"></option>
             </select>
           </div>
           <div class="col-12">
@@ -187,30 +177,20 @@
   </section>
 
 <!-- CHILD DATA -->
+<div class="card-group">
+  <div class="card">
   <div class="album py-5 bg-light">
     <div class="container" id="child-child-container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
-          <!-- <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div> -->
+          <!-- renderChildInfo -->
         </div>
        </div>
     </div>
   </div>
-
+</div>
+</div>
 </main>
 
 <footer class="text-muted py-5">

@@ -4,11 +4,10 @@ const childrenURL = "http://localhost:3000/api/v1/children"
 document.addEventListener('DOMContentLoaded', () => {
   getChildren()
   getClassrooms()
-  // function init(){
     // fetch and load children
-    // getchildren()
     const createClassroomForm = document.querySelector("#create-classroom-form")  //query the form  
     createClassroomForm.addEventListener("submit", (e) => classroomFormHandler(e))
+    
     
     const createChildForm = document.querySelector("#create-child-form")  //query the form  
     createChildForm.addEventListener("submit", (e) => createFormHandler(e))
@@ -17,9 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loginForm.addEventListener("submit", (e) => loginFormHandler(e))
 })
       // debugger
-      // createFormHandler(e)
-  //   })
-  // }
 
   function getChildren() {  //creating a new child
       fetch(childrenURL)
@@ -42,31 +38,38 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(classroomsURL)
     .then(response => response.json())
     .then(classrooms => {                 //getting my classroom array
+      // console.log(classrooms)
       classrooms.data.forEach(classroom => {  // iterate over the response ans show the data
           // double check how your data is nested in the console so you can successfully access the attributes of each individual object
         // debugger
         const newClassroom = new Classroom(classroom)  
         // debugger   //creates a new instance of a Classroom class. classroom object and the attributes
 
-          // // // renderClassroomInfo(classroom)
+          // // // renderClassroomTable(classroom)
         document.querySelector('#classroom-classroom-container').innerHTML += newClassroom.renderClassroomTable();
 
         })
     })
 }
 
-  // function renderChildInfo(child) {
-  //   const childMarkup = `
-  //   <div data-id=${child.id}>
-  //     <img src=${child.attributes.avatar} height="200" width="250">
-  //     <h3>${child.attributes.name}</h3>
-  //     <p>${child.attributes.classroom.room_name}</p>
-  //     <button data-id=${child.id}>edit</button>
-  //   </div>
-  //   <br><br>`;
+function updateClassroom(classroom) {
+  fetch(`http://localhost:3000/api/v1/classrooms/${classroom.id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json"},
+    body: JSON.stringify({classroom: classroom})
+  })
+  .then(response => response.json())
+  .then(response => console.log("updated response", response))
+}
 
-  //   document.querySelector('#child-child-container').innerHTML += childMarkup
-  // }
+function deleteClassroom(id) {
+  fetch(`http://localhost:3000/api/v1/classrooms/${id}`, {
+    method: "DELETE" 
+  })
+  .then(response => response.json())
+  .then(response => console.log(response))
+}
+
 
   function loginFormHandler(e) {
     e.preventDefault()
@@ -103,7 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function createFormHandler(e) {     // handles the inputs
-    e.preventDefault()            
+    e.preventDefault() 
+    console.log(e);           
     const nameInput = document.querySelector('#input-name').value
     const ageInput = document.querySelector('#input-age').value
     const avatarInput = document.querySelector('#input-avatar').value
@@ -120,16 +124,11 @@ document.addEventListener('DOMContentLoaded', () => {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(bodyData) // all attributes
-        // name: name,
-        // age: age,
-        // avatar: avatar,
-        // classroom_id: classroom_id  
     })
     .then(response => response.json())
     .then(child => {
       // debugger
       // console.log(child);
-      // const childData = child.data
       const newChild = new Child(child.data)
       // render json response
       // renderChildInfo(childData)
@@ -138,9 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 
-
     function classroomFormHandler(e) {     // handles the inputs
-      e.preventDefault()            
+      e.preventDefault()
+      console.log(e);            
       const roomNameInput = document.querySelector('#input-room-name').value
       const ageInput = document.querySelector('#input-age').value
       const teacherNameInput = document.querySelector('#input-teacher-name').value
@@ -157,23 +156,15 @@ document.addEventListener('DOMContentLoaded', () => {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(bodyData) // all attributes
-          // name: name,
-          // age: age,
-          // avatar: avatar,
-          // classroom_id: classroom_id  
       })
       .then(response => response.json())
       .then(classroom => {
         // debugger
         // console.log(classroom);
-        // const classroomData = classroom.data
         const newClassroom = new Classroom(classroom.data)
         // render json response
-        // renderclassroomInfo(classroomData)
-            document.querySelector('#classroom-classroom-container').innerHTML += newClassroom.renderClassroomTable();
-  
+            document.querySelector('#classroom-classroom-container').innerHTML += newClassroom.renderClassroomTable();  
       })
+    }
+  }
 
-  }}
-
-// init()
