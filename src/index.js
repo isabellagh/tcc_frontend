@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const createChildForm = document.querySelector("#create-child-form")  //query the form  
     createChildForm.addEventListener("submit", (e) => createFormHandler(e))
 
-    const loginForm = document.querySelector("#login-form")  //query the form  
-    loginForm.addEventListener("submit", (e) => loginFormHandler(e))
+    // const loginForm = document.querySelector("#login-form")  //query the form  
+    // loginForm.addEventListener("submit", (e) => loginFormHandler(e))
 })
       // debugger
 
@@ -71,39 +71,39 @@ function deleteClassroom(id) {
 }
 
 
-  function loginFormHandler(e) {
-    e.preventDefault()
-    const emailInput = e.target.querySelector("#login-email").value
-    const pwInput = e.target.querySelector("#login-password").value
-    loginFetch(emailInput, pwInput)
-  }
+  // function loginFormHandler(e) {
+  //   e.preventDefault()
+  //   const emailInput = e.target.querySelector("#login-email").value
+  //   const pwInput = e.target.querySelector("#login-password").value
+  //   loginFetch(emailInput, pwInput)
+  // }
 
-  function loginFetch(email, password) {
-    const bodyData = {user: { email, password }} //destructuring
+  // function loginFetch(email, password) {
+  //   const bodyData = {user: { email, password }} //destructuring
 
-    fetch("http://localhost:3000/api/v1/login", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(bodyData)
-    })
-    .then(response => response.json())
-    .then(json => {
-      localStorage.setItem('jwt_token', json.jwt)
-      renderUserProfile()
-    })
-  }
+  //   fetch("http://localhost:3000/api/v1/login", {
+  //     method: "POST",
+  //     headers: {"Content-Type": "application/json"},
+  //     body: JSON.stringify(bodyData)
+  //   })
+  //   .then(response => response.json())
+  //   .then(json => {
+  //     localStorage.setItem('jwt_token', json.jwt)
+  //     renderUserProfile()
+  //   })
+  // }
 
-  function renderUserProfile() {
-    console.log(localStorage.getItem('jwt_token'));
-    fetch('http://localhost:3000/api/v1/profile', {
-      method: 'GET',
-      headers: { Authorization: `Bearer ${localStorage.getItem('jwt_token')}`}
-    })
-    .then(response => response.json())
-    .then(json => {
-      alert(`Welcome back ${json.user.data.attributes.name}`)
-    })
-  }
+  // function renderUserProfile() {
+  //   console.log(localStorage.getItem('jwt_token'));
+  //   fetch('http://localhost:3000/api/v1/profile', {
+  //     method: 'GET',
+  //     headers: { Authorization: `Bearer ${localStorage.getItem('jwt_token')}`}
+  //   })
+  //   .then(response => response.json())
+  //   .then(json => {
+  //     alert(`Welcome back ${json.user.data.attributes.name}`)
+  //   })
+  // }
 
   function createFormHandler(e) {     // handles the inputs
     e.preventDefault() 
@@ -135,6 +135,7 @@ function deleteClassroom(id) {
           document.querySelector('#child-child-container').innerHTML += newChild.renderChildInfo();
 
     })
+  }
 
 
     function classroomFormHandler(e) {     // handles the inputs
@@ -143,8 +144,8 @@ function deleteClassroom(id) {
       const roomNameInput = document.querySelector('#input-room-name').value
       const ageInput = document.querySelector('#input-age').value
       const teacherNameInput = document.querySelector('#input-teacher-name').value
-      const full = (document.querySelector('#full').value)
-      classroomPostFetch(roomNameInput, ageInput, teacherNameInput, full)
+      // const full = (document.querySelector('#full').value)
+      classroomPostFetch(roomNameInput, ageInput, teacherNameInput)
     }
   
     function classroomPostFetch(room_name, age, teacher_name, full) {
@@ -166,5 +167,5 @@ function deleteClassroom(id) {
             document.querySelector('#classroom-classroom-container').innerHTML += newClassroom.renderClassroomTable();  
       })
     }
-  }
+  
 
