@@ -25,7 +25,7 @@ class Classroom {
               <div id="buttonsList" class="btn-group">
                 <ul>
                 <button id="view-button" type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button id="edit-button" type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                <button classroom-edit-id=${this.id} type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 <button id="delete-button" type="button" name="delete" class="btn btn-sm btn-outline-secondary">Delete</button>
                 <ul/>
             </div>
@@ -35,6 +35,27 @@ class Classroom {
       </div>
       </div>`
     }
+
+    static findById(id) {
+        return this.all.find(classroom => classroom.id === id);
+    }
+
+    renderUpdateForm() {
+        return `
+        <form classroom-edit-id=${this.id}>
+          <label>Room name</label>
+          <p>
+            <input type="text" value="${this.room_name}" >
+          </p>
+          <label>Teacher name</label>
+          <p>
+            <input type="text" value="${this.teacher_name}" >
+          </p>
+          <button type='submit'>Save</button>
+        </form>
+        `
+    }
+
 }
 
 Classroom.all = [];
