@@ -11,10 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const createChildForm = document.querySelector("#create-child-form")  //query the form  
     createChildForm.addEventListener("submit", (e) => createFormHandler(e))
-
-    
-    // const loginForm = document.querySelector("#login-form")  //query the form  
-    // loginForm.addEventListener("submit", (e) => loginFormHandler(e))
 })
       // debugger
 
@@ -55,6 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
   function getClassrooms() {  //creating a new child
+    const classroomList = document.getElementById('select-classroom')
+
     fetch(classroomsURL)
     .then(response => response.json())
     .then(classrooms => {                 //getting my classroom array
@@ -63,6 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
           // double check how your data is nested in the console so you can successfully access the attributes of each individual object
         // debugger
         const newClassroom = new Classroom(classroom)  
+        const classroomListItem = document.createElement('option')
+
+        classroomListItem.innerHTML = classroom.attributes.room_name
+        classroomListItem.value = classroom.id
+        classroomList.append(classroomListItem)
+
         // debugger   //creates a new instance of a Classroom class. classroom object and the attributes
 
           // // // renderClassroomTable(classroom)
@@ -102,8 +106,10 @@ function deleteClassroom(id) {
     console.log(e);           
     const nameInput = document.querySelector('#input-name').value
     const ageInput = document.querySelector('#input-age').value
+    console.log(nameInput)
     const avatarInput = document.querySelector('#input-avatar').value
     const classroomId = parseInt(document.querySelector('#select-classroom').value)
+    console.log(classroomId)
     postFetch(nameInput, ageInput, avatarInput, classroomId)
 
   }
@@ -119,15 +125,16 @@ function deleteClassroom(id) {
       body: JSON.stringify(bodyData) // all attributes
     })
     .then(response => response.json())
-    .then(child => {
-      // debugger
-      // console.log(child);
-      const newChild = new Child(child.data)
-      // render json response
-      // renderChildInfo(childData)
-          document.querySelector('#child-child-container').innerHTML += newChild.renderChildInfo();
+    .then(data => console.log(data))
+    // .then(child => {
+    //   // debugger
+    //   // console.log(child);
+    //   const newChild = new Child(child.data)
+    //   // render json response
+    //   // renderChildInfo(childData)
+    //       document.querySelector('#child-child-container').innerHTML += newChild.renderChildInfo();
 
-    })
+    // })
   }
 
 
