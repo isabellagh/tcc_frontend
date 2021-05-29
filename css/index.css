@@ -35,3 +35,11 @@
   footer p {
     margin-bottom: .25rem;
   }
+
+  .hidden{
+    display:none;
+  }
+
+  .result{
+    max-width:90px;
+  }

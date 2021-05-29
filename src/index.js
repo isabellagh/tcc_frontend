@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const createChildForm = document.querySelector("#create-child-form")  //query the form  
     createChildForm.addEventListener("submit", (e) => createFormHandler(e))
 
+    
     // const loginForm = document.querySelector("#login-form")  //query the form  
     // loginForm.addEventListener("submit", (e) => loginFormHandler(e))
 })
@@ -34,6 +35,25 @@ document.addEventListener('DOMContentLoaded', () => {
       })
   }
 
+  function updateChild(child) {
+    fetch(`http://localhost:3000/api/v1/children/${child.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json"},
+      body: JSON.stringify({child: child})
+    })
+    .then(response => response.json())
+    .then(response => console.log("updated response", response))
+  }
+  
+  function deleteChild(id) {
+    fetch(`http://localhost:3000/api/v1/children/${id}`, {
+      method: "DELETE" 
+    })
+    .then(response => response.json())
+    .then(response => console.log(response))
+  }
+  
+
   function getClassrooms() {  //creating a new child
     fetch(classroomsURL)
     .then(response => response.json())
@@ -51,6 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 }
+
+// const classroomSelectedForm = Classroom.all.map(classroom => {
+//   return` <option value={classrom.id}>{classroom.room_name}</option>`
+// })
+// document.querySelector('#select-classroom').innerHTML += classroomSelectedForm
+
 
 function updateClassroom(classroom) {
   fetch(`http://localhost:3000/api/v1/classrooms/${classroom.id}`, {
@@ -71,48 +97,15 @@ function deleteClassroom(id) {
 }
 
 
-  // function loginFormHandler(e) {
-  //   e.preventDefault()
-  //   const emailInput = e.target.querySelector("#login-email").value
-  //   const pwInput = e.target.querySelector("#login-password").value
-  //   loginFetch(emailInput, pwInput)
-  // }
-
-  // function loginFetch(email, password) {
-  //   const bodyData = {user: { email, password }} //destructuring
-
-  //   fetch("http://localhost:3000/api/v1/login", {
-  //     method: "POST",
-  //     headers: {"Content-Type": "application/json"},
-  //     body: JSON.stringify(bodyData)
-  //   })
-  //   .then(response => response.json())
-  //   .then(json => {
-  //     localStorage.setItem('jwt_token', json.jwt)
-  //     renderUserProfile()
-  //   })
-  // }
-
-  // function renderUserProfile() {
-  //   console.log(localStorage.getItem('jwt_token'));
-  //   fetch('http://localhost:3000/api/v1/profile', {
-  //     method: 'GET',
-  //     headers: { Authorization: `Bearer ${localStorage.getItem('jwt_token')}`}
-  //   })
-  //   .then(response => response.json())
-  //   .then(json => {
-  //     alert(`Welcome back ${json.user.data.attributes.name}`)
-  //   })
-  // }
-
   function createFormHandler(e) {     // handles the inputs
     e.preventDefault() 
     console.log(e);           
     const nameInput = document.querySelector('#input-name').value
     const ageInput = document.querySelector('#input-age').value
     const avatarInput = document.querySelector('#input-avatar').value
-    const classroomId = parseInt(document.querySelector('#classrooms').value)
+    const classroomId = parseInt(document.querySelector('#select-classroom').value)
     postFetch(nameInput, ageInput, avatarInput, classroomId)
+
   }
 
   function postFetch(name, age, avatar, classroom_id) {
@@ -167,5 +160,9 @@ function deleteClassroom(id) {
             document.querySelector('#classroom-classroom-container').innerHTML += newClassroom.renderClassroomTable();  
       })
     }
+
+    // BUTTON ACTIONS
+
+
   
 

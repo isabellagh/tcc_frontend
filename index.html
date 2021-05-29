@@ -111,20 +111,10 @@
 </section>
 
 <!-- CLASSROOM DATA TABLE -->
-<div class="card-group">
-  <div class="card">
-<div class="album py-5 bg-light">
-  <div class="container" id="classroom-classroom-container">
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <div class="col">
-        <!-- renderClassroomTable() -->
-      </div>
-     </div>
+  <div class="card-group" id="classroom-classroom-container">
+              <!-- renderChildInfo -->
   </div>
-</div>
-</div>
-</div>
 
 <!-- CHILD FORM -->
   <section class="py-5 text-center container">
@@ -144,14 +134,15 @@
             <label for="inputAge" class="form-label"></label>
             <input type="text" class="form-control" id="input-age" placeholder="Child's age">
           </div>
-          <div class="col-md-4">
+          <div class="col-12">
             <br>
-            <!-- <input type="hidden" id="classroom-id" value=""> -->
-            <label for="input-classroom" class="form-label"></label>
-            <select id="input-classroom" class="form-select">
-              <option selected>Classroom...</option>
-              <option value="1" id="Toddler 1"></option>
-            </select>
+        <label for="classrooms">Choose a classroom:</label>
+        <select id="select-classroom" name="classrooms">
+          <option value="1">Infant A</option>
+          <option value="2">Infant B</option>
+          <option value="3">Toddler 1</option>
+        </select>
+        <br><br>
           </div>
           <div class="col-12">
           </div>
@@ -165,20 +156,20 @@
   </section>
 
 <!-- CHILD DATA -->
-<div class="card-group">
-  <div class="card">
-  <div class="album py-5 bg-light">
-    <div class="container" id="child-child-container">
 
+<!-- <div class="card-group">
+  <div class="card">
+  <div class="album py-5 bg-light"> -->
+    <div class="container" id="child-child-container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <!-- renderChildInfo -->
         </div>
-       </div>
+      </div>
     </div>
-  </div>
+  <!-- </div>
 </div>
-</div>
+</div> -->
 </main>
 
 <footer class="text-muted py-5">
