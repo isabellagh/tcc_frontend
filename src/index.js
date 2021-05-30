@@ -11,8 +11,29 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const createChildForm = document.querySelector("#create-child-form")  //query the form  
     createChildForm.addEventListener("submit", (e) => createFormHandler(e))
-})
-      // debugger
+
+    // const deleteClassroomBtn = document.getElementById("classroom-classroom-container")
+    // deleteClassroomBtn.addEventListener("click", deleteClassroom)
+
+  })
+  document.addEventListener("click", function(e) {
+    if(e.target.matches("#delete-classroom-button")) {
+      e.preventDefault()
+      deleteClassroom(e)
+      // e.target.parentNode.remove()
+      // debugger  
+      // deleteClassroom(e)
+      // alert("The classroom was deleted");
+    }
+    if(e.target.matches("#edit-classroom-button")){
+      e.preventDefault()
+      
+    }
+    })  
+
+    
+
+    
 
   function getChildren() {  //creating a new child
       fetch(childrenURL)
@@ -76,12 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 }
 
-// const classroomSelectedForm = Classroom.all.map(classroom => {
-//   return` <option value={classrom.id}>{classroom.room_name}</option>`
-// })
-// document.querySelector('#select-classroom').innerHTML += classroomSelectedForm
-
-
 function updateClassroom(classroom) {
   fetch(`http://localhost:3000/api/v1/classrooms/${classroom.id}`, {
     method: "PATCH",
@@ -102,7 +117,7 @@ function deleteClassroom(id) {
 
 
   function createFormHandler(e) {     // handles the inputs
-    e.preventDefault() 
+    e.preventDefault()
     console.log(e);           
     const nameInput = document.querySelector('#input-name').value
     const avatarInput = document.querySelector('#input-avatar').value
@@ -169,6 +184,8 @@ function deleteClassroom(id) {
             document.querySelector('#classroom-classroom-container').innerHTML += newClassroom.renderClassroomTable();  
       })
     }
+
+    
 
     // BUTTON ACTIONS
 

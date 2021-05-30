@@ -14,26 +14,27 @@ class Classroom {
         // debugger
 
        return `
+       <span class="classroomCard" id=${this.id}>
       <div id="classroomCard" class="card-group" style="width: 18rem;">
         <div class="card mb-4 shadow-sm">
         <img src="https://playtolearnpreschool.us/wp-content/uploads/2015/07/IMG_4277-1024x732.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <span><h5 class="card-title">${this.room_name}</h5><span/>
+            <h5 class="card-title">${this.room_name}</h5>
             <h5 class="card-title">Teacher: ${this.teacher_name}</h5>
             <p class="card-text">Age group: ${this.age}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div id="buttonsList" class="btn-group">
                 <ul>
                 <button id="view-button" type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button classroom-edit-id=${this.id} type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                <button id="delete-button" type="button" name="delete" class="btn btn-sm btn-outline-secondary">Delete</button>
+                <button id="edit-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                <button id="delete-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
                 <ul/>
             </div>
             </div>
           </div>
         </div>
       </div>
-      </div>`
+      <span/>`
     }
 
     static findById(id) {
