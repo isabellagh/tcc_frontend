@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener("click", function(e) {
     if(e.target.matches("#delete-classroom-button")) {
       e.preventDefault()
-      deleteClassroom(e)
+      deleteClassroom(e.target.value)
+      // console.log(e.target.value)
       // e.target.parentNode.remove()
       // debugger  
       // deleteClassroom(e)

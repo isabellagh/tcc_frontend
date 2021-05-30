@@ -27,7 +27,7 @@ class Classroom {
                 <ul>
                 <button id="view-button" type="button" class="btn btn-sm btn-outline-secondary">View</button>
                 <button id="edit-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                <button id="delete-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
+                <button value=${this.id} id="delete-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
                 <ul/>
             </div>
             </div>
