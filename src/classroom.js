@@ -12,11 +12,10 @@ class Classroom {
 
     renderClassroomTable() {
         // debugger
-
        return `
-       <span class="classroomCard" id=${this.id}>
+       <span class="classroomCard" id="${this.id}>
       <div id="classroomCard" class="card-group" style="width: 18rem;">
-        <div class="card mb-4 shadow-sm">
+        <div id="classroomInputs" class="card mb-4 shadow-sm">
         <img src="https://playtolearnpreschool.us/wp-content/uploads/2015/07/IMG_4277-1024x732.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${this.room_name}</h5>
@@ -26,7 +25,7 @@ class Classroom {
               <div id="buttonsList" class="btn-group">
                 <ul>
                 <button id="view-button" type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button id="edit-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                <button value=${this.id} id="edit-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 <button value=${this.id} id="delete-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
                 <ul/>
             </div>
@@ -41,21 +40,28 @@ class Classroom {
         return this.all.find(classroom => classroom.id === id);
     }
 
-    renderUpdateForm() {
-        return `
-        <form classroom-edit-id=${this.id}>
-          <label>Room name</label>
-          <p>
-            <input type="text" value="${this.room_name}" >
-          </p>
-          <label>Teacher name</label>
-          <p>
-            <input type="text" value="${this.teacher_name}" >
-          </p>
-          <button type='submit'>Save</button>
-        </form>
-        `
-    }
+    // renderUpdateForm() {
+    //     return `
+    //     <form id="create-classroom-form" class="row g-3">
+    //     <div class="col-12">
+    //       <label for="roomNameInput" class="form-label"></label>
+    //       <input type="text" value="${this.room_name}" class="form-control" id="input-room-name" placeholder="Classroom's name">
+    //     </div>
+    //     <div class="col-12">
+    //       <label for="classroomAgeInput" class="form-label"></label>
+    //       <input type="text" value="${this.age}" class="form-control" id="classroom-input-age" placeholder="Classroom's age range">
+    //     </div>
+    //     <div class="col-12">
+    //       <label for="teacherNameInput" class="form-label"></label>
+    //       <input type="text" value="${this.teacher_name}" class="form-control" id="input-teacher-name" placeholder="Classroom's teacher">
+    //     </div>
+    //     <div class="col-12">
+    //       <br>
+    //       <button type="submit" class="btn btn-primary">Add a classroom</button>
+    //     </div>
+    //   </form>
+    //     `
+    // }
 
 }
 

@@ -8,29 +8,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const createClassroomForm = document.querySelector("#create-classroom-form")  //query the form  
     createClassroomForm.addEventListener("submit", (e) => classroomFormHandler(e))
     
-    
     const createChildForm = document.querySelector("#create-child-form")  //query the form  
     createChildForm.addEventListener("submit", (e) => createFormHandler(e))
 
     // const deleteClassroomBtn = document.getElementById("classroom-classroom-container")
     // deleteClassroomBtn.addEventListener("click", deleteClassroom)
-
   })
+
   document.addEventListener("click", function(e) {
+    const classroomCard = document.getElementById('classroomInputs')
+
     if(e.target.matches("#delete-classroom-button")) {
       e.preventDefault()
       deleteClassroom(e.target.value)
+      classroomCard.remove(classroomCard)
       // console.log(e.target.value)
-      // e.target.parentNode.remove()
-      // debugger  
-      // deleteClassroom(e)
       // alert("The classroom was deleted");
     }
     if(e.target.matches("#edit-classroom-button")){
       e.preventDefault()
-      
+      updateClassroom() 
     }
-    })  
+  })
+
+  document.addEventListener("click", function(e) {
+    const childCard = document.getElementById('childInputs')
+
+    if(e.target.matches("#delete-child-button")) {
+      e.preventDefault()
+      deleteChild(e.target.value)
+      childCard.remove(childCard)
+        // console.log(e.target.value)
+        // alert("The classroom was deleted");
+    }
+    if(e.target.matches("#edit-child-button")){
+      e.preventDefault()
+        
+    }
+  }) 
 
     
 

@@ -17,9 +17,9 @@ class Child {
     renderChildInfo() {
         // debugger
       return `
-      
-      <div class="card" style="width: 18rem;">
-        <div class="card mb-4 shadow-sm">
+      <span class="childCard" id=${this.id}>
+      <div id="childCard" class="card-group" style="width: 18rem;">
+      <div id="childInputs" class="card mb-4 shadow-sm"" style="width: 18rem;">
           <img src=${this.avatar} class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${this.name}</h5>
@@ -28,14 +28,15 @@ class Child {
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                 <button data-id=${this.id}type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                <button type="button" name="delete" class="btn btn-sm btn-outline-secondary">Delete</button>
+                <button value=${this.id} id="delete-child-button" type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
               </div>
               <small class="text-muted">${this.classroom.room_name}</small>
             </div>
           </div>
         </div>
-        </div>
-        </div>`
+      </div>
+      </div>
+      <span/>`
     }
 
     // renderUpdateForm() {
