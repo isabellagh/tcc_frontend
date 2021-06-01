@@ -19,15 +19,13 @@ class Child {
       return `
       <span class="childCard" id=${this.id}>
       <div id="childCard" class="card-group" style="width: 18rem;">
-      <div id="childInputs" class="card mb-4 shadow-sm"" style="width: 18rem;">
+        <div id="childInputs" class="card mb-4 shadow-sm"" style="width: 18rem;">
           <img src=${this.avatar} class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${this.name}</h5>
             <p class="card-text">Age: ${this.age}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button data-id=${this.id}type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 <button value=${this.id} id="delete-child-button" type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
               </div>
               <small class="text-muted">${this.classroom.room_name}</small>
@@ -58,6 +56,9 @@ class Child {
     //     </form>
     //     `
     // }
+
+    // <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+    // <button data-id=${this.id}type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 
 
 }

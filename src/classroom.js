@@ -12,11 +12,11 @@ class Classroom {
 
     renderClassroomTable() {
         // debugger
-       return `
-       <span class="classroomCard" id="${this.id}>
+      return `
+      <span class="classroomCard" id="${this.id}>
       <div id="classroomCard" class="card-group" style="width: 18rem;">
         <div id="classroomInputs" class="card mb-4 shadow-sm">
-        <img src="https://playtolearnpreschool.us/wp-content/uploads/2015/07/IMG_4277-1024x732.jpg" class="card-img-top" alt="...">
+          <img src="https://playtolearnpreschool.us/wp-content/uploads/2015/07/IMG_4277-1024x732.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${this.room_name}</h5>
             <h5 class="card-title">Teacher: ${this.teacher_name}</h5>
@@ -24,8 +24,6 @@ class Classroom {
             <div class="d-flex justify-content-between align-items-center">
               <div id="buttonsList" class="btn-group">
                 <ul>
-                <button id="view-button" type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button value=${this.id} id="edit-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 <button value=${this.id} id="delete-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
                 <ul/>
             </div>
@@ -63,6 +61,10 @@ class Classroom {
     //     `
     // }
 
+
+    // <button id="view-button" type="button" class="btn btn-sm btn-outline-secondary">View</button>
+    // <button value=${this.id} id="edit-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                
 }
 
 Classroom.all = [];
