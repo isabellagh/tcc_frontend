@@ -26,7 +26,7 @@ class Child {
             <p class="card-text">Age: ${this.age}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button value=${this.id} id="delete-child-button" type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
+                <button data-id=${this.id} id="delete-child-button" type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
               </div>
               <small class="text-muted">${this.classroom.room_name}</small>
             </div>

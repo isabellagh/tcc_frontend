@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   document.addEventListener("click", function(e) {
-    const classroomCard = document.querySelector('#classroomInputs')
+    const classroomCard = document.getElementById(`${e.target.dataset.id}`)
 
     if(e.target.matches("#delete-classroom-button")) {
       e.preventDefault()
-      deleteClassroom(e.target.value)
+      deleteClassroom(e.target.dataset.id)
       classroomCard.remove(classroomCard)
-      // console.log(e.target.value)
+      // console.log(e.target.dataset.id)
       // alert("The classroom was deleted");
     }
     if(e.target.matches("#edit-classroom-button")){
@@ -31,25 +31,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  // function eraseClassroom() {
-  //   const classroomCard = document.getElementById('classroomInputs')
-  //   classroomCard.remove(classroomCard)
-
-  // }
 
   document.addEventListener("click", function(e) {
-    const childCard = document.getElementById('childInputs')
-    //"div:last-child"
+    const childCard = document.getElementById(`${e.target.dataset.id}`)
+
     if(e.target.matches("#delete-child-button")) {
       e.preventDefault()
-      deleteChild(e.target.value)
+      deleteChild(e.target.dataset.id)
       childCard.remove(childCard)
-        // console.log(e.target.value)
+      // console.log(e)
         // alert("The classroom was deleted");
     }
-    // if(e.target.matches("#edit-child-button")){
-    //   e.preventDefault()    
-    // }
   }) 
 
     

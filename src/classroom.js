@@ -13,7 +13,7 @@ class Classroom {
     renderClassroomTable() {
         // debugger
       return `
-      <span class="classroomCard" id="${this.id}>
+      <span class="classroomCard" id="${this.id}">
       <div id="classroomCard" class="card-group" style="width: 18rem;">
         <div id="classroomInputs" class="card mb-4 shadow-sm">
           <img src="https://playtolearnpreschool.us/wp-content/uploads/2015/07/IMG_4277-1024x732.jpg" class="card-img-top" alt="...">
@@ -24,7 +24,7 @@ class Classroom {
             <div class="d-flex justify-content-between align-items-center">
               <div id="buttonsList" class="btn-group">
                 <ul>
-                <button value=${this.id} id="delete-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
+                <button data-id=${this.id} id="delete-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
                 <ul/>
             </div>
             </div>
