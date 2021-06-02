@@ -1,14 +1,14 @@
 class Classroom {
-    constructor(classroom) {        
-        this.id = classroom.id
-        // debugger
-        this.room_name = classroom.attributes.room_name
-        this.age = classroom.attributes.age
-        this.teacher_name = classroom.attributes.teacher_name
-        this.full = classroom.attributes.full
-        Classroom.all.push(this)
-        //   debugger
-    }
+    
+  constructor(classroom) {        
+    this.id = classroom.id
+     // debugger
+    this.room_name = classroom.attributes.room_name
+    this.age = classroom.attributes.age
+    this.teacher_name = classroom.attributes.teacher_name
+    this.full = classroom.attributes.full
+    Classroom.all.push(this)
+  }
 
     renderClassroomTable() {
         // debugger
@@ -24,7 +24,7 @@ class Classroom {
             <div class="d-flex justify-content-between align-items-center">
               <div id="buttonsList" class="btn-group">
                 <ul>
-                <button data-id=${this.id} id="delete-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
+                  <button data-id=${this.id} id="delete-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Delete Classroom</button>
                 <ul/>
             </div>
             </div>
@@ -33,38 +33,6 @@ class Classroom {
       </div>
       <span/>`
     }
-
-    static findById(id) {
-        return this.all.find(classroom => classroom.id === id);
-    }
-
-    // renderUpdateForm() {
-    //     return `
-    //     <form id="create-classroom-form" class="row g-3">
-    //     <div class="col-12">
-    //       <label for="roomNameInput" class="form-label"></label>
-    //       <input type="text" value="${this.room_name}" class="form-control" id="input-room-name" placeholder="Classroom's name">
-    //     </div>
-    //     <div class="col-12">
-    //       <label for="classroomAgeInput" class="form-label"></label>
-    //       <input type="text" value="${this.age}" class="form-control" id="classroom-input-age" placeholder="Classroom's age range">
-    //     </div>
-    //     <div class="col-12">
-    //       <label for="teacherNameInput" class="form-label"></label>
-    //       <input type="text" value="${this.teacher_name}" class="form-control" id="input-teacher-name" placeholder="Classroom's teacher">
-    //     </div>
-    //     <div class="col-12">
-    //       <br>
-    //       <button type="submit" class="btn btn-primary">Add a classroom</button>
-    //     </div>
-    //   </form>
-    //     `
-    // }
-
-
-    // <button id="view-button" type="button" class="btn btn-sm btn-outline-secondary">View</button>
-    // <button value=${this.id} id="edit-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                
 }
 
 Classroom.all = [];
