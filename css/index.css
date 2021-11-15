@@ -13,17 +13,111 @@ body {
     #00bf72,
     #a8eb12
   );
-  /* font-family: "Open Sans", sans-serif;
-  display: flex;
+  font-family: "Open Sans", sans-serif;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  margin: 0; */
+  margin: 0;
 }
 
 .site-title {
   padding: 10px;
 }
+
+
+
+/* classroom form */
+.class-form-container {
+  background-image: linear-gradient(
+    to right top,
+    #d6e1f2,
+    #cae3ed,
+    #c6e4e2,
+    #cbe2d5,
+    #d7dec9
+  );
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 5px;
+  box-shadow: #a8eb12;
+  width: 500px;
+}
+
+.form {
+  padding: 30px 20px;
+}
+
+h2 {
+  color: rgb(16, 83, 125);
+  text-align: center;
+  margin: 0 0 20;
+}
+/* 
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form label {
+  color: rgb(38, 53, 134);
+  display: block;
+  margin-bottom: 5px;
+} */
+
+.form input {
+  border: 4px solid #c4eccd;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.form input:focus {
+  outline: 0;
+  border-color: #66aae2;
+}
+
+.form button {
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right top,
+    #276a98,
+    #267dad,
+    #2391c2,
+    #1da5d7,
+    #12baeb
+  );
+  border: 2px solid
+    #276a98,
+    #267dad,
+    #2391c2,
+    #1da5d7,
+    #12baeb;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* .jumbotron {
   padding-top: 3rem;
@@ -32,52 +126,52 @@ body {
   background-color: #fff;
 } */
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .jumbotron {
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
-}
+} */
 
-.jumbotron p:last-child {
+/* .jumbotron p:last-child {
   margin-bottom: 0;
-}
+} */
 
-.jumbotron h1 {
+/* .jumbotron h1 {
   font-weight: 300;
-}
+} */
 
-.jumbotron .container {
+/* .jumbotron .container {
   max-width: 40rem;
-}
+} */
 
-footer {
+/* footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
 
 footer p {
   margin-bottom: 0.25rem;
-}
+} */
 
-.hidden {
+/* .hidden {
   display: none;
-}
+} */
 
-.result {
+/* .result {
   max-width: 90px;
-}
+} */
 
-.modal {
+/* .modal {
   position: fixed;
   z-index: 100;
   width: 80%;
   top: 30vh;
   left: 10%;
   display: none;
-}
+} */
 
-.modal.visible {
+/* .modal.visible {
   display: block;
   animation: fade-slide-in 0.3s ease-out forwards;
 }
@@ -99,18 +193,5 @@ footer p {
   padding: 1rem;
   display: flex;
   justify-content: flex-end;
-}
+} */
 
-.class-form-container {
-  background-image: linear-gradient(
-    to right top,
-    #d6e1f2,
-    #cae3ed,
-    #c6e4e2,
-    #cbe2d5,
-    #d7dec9
-  );
-  border-radius: 5px;
-  box-shadow: #a8eb12;
-  width: 400px;
-}
