@@ -19,6 +19,7 @@ document.addEventListener("click", function(e) {
     e.preventDefault()
     deleteClassroom(e.target.dataset.id)
     classroomCard.remove(classroomCard)
+    // classroomCard.reset()
   }
 })
 
@@ -29,6 +30,7 @@ document.addEventListener("click", function(e) {
     e.preventDefault()
     deleteChild(e.target.dataset.id)
     childCard.remove(childCard)
+    // childCard.reset()
   }
 }) 
    
@@ -95,7 +97,14 @@ function deleteClassroom(id) {
 function getChildren() {  
   fetch(childrenURL)
   .then(response => response.json())
-  .then(children => {                 
+  .then(children => {   
+    
+   
+    children.data.sort((child, child2) => {
+      return child.attributes.name.length - child2.attributes.name.length
+       
+    })
+
     children.data.forEach(child => {  
 
       const newChild = new Child(child)  
