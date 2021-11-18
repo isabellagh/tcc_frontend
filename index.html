@@ -116,96 +116,34 @@
         </div>
       </div>
     </header>
-
     <main>
-      <!-- <div class="container">
-    <form id="form" class="form">
-      <h2>Register with us!</h2>
-      <div class="form-control">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Enter Name" />
-        <small>Error message</small>
-      </div>
-      <div class="form-control">
-        <label for="email">Email</label>
-        <input type="text" id="email" placeholder="Enter Email" />
-        <small>Error message</small>
-      </div>
-      <div class="form-control">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter Password" autocomplete="password" />
-        <small>Error message</small>
-      </div>
-      <div class="form-control">
-        <label for="password2">Confirm Password</label>
-        <input type="password" id="password2" placeholder="Confirm your Password" autocomplete="password2" />
-        <small>Error message</small>
-      </div>
-      <button type="submit">Submit</button>
-    </form> -->
       <!-- CLASSROOM FORM -->
-
       <div class="class-form-container">
         <form id="create-classroom-form" class="form">
           <h2>Create a new classroom</h2>
-
-          <!-- <label for="roomNameInput"> Name</label> -->
           <input
             type="text"
             name="roomNameInput"
             id="input-room-name"
             placeholder="Classroom's name"
           />
-
-          <!-- <label for="classroomAgeInput">Age</label> -->
           <input
             type="text"
             name="classroomAgeInput"
             id="classroom-input-age"
             placeholder="Classroom's age range"
           />
-
-          <!-- <label for="teacherNameInput">Teacher</label> -->
           <input
             type="text"
             name="teacherNameInput"
             id="input-teacher-name"
             placeholder="Classroom's teacher"
           />
-
           <button type="submit">Add a classroom</button>
         </form>
       </div>
 
-      <!-- <section class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-6 col-md-8 mx-auto">
-      <h4>Create a new classroom</h4>
-      <form id="create-classroom-form" class="row g-3">
-        <div class="col-12">
-          <label for="roomNameInput" class="form-label"></label>
-          <input type="text" name="roomNameInput" class="form-control" id="input-room-name" placeholder="Classroom's name">
-        </div>
-        <div class="col-12">
-          <label for="classroomAgeInput" class="form-label"></label>
-          <input type="text" name="classroomAgeInput" class="form-control" id="classroom-input-age" placeholder="Classroom's age range">
-        </div>
-        <div class="col-12">
-          <label for="teacherNameInput" class="form-label"></label>
-          <input type="text" name="teacherNameInput" class="form-control" id="input-teacher-name" placeholder="Classroom's teacher">
-        </div>
-        <div class="col-12">
-          <br>
-          <button type="submit" class="btn btn-primary">Add a classroom</button>
-        </div>
-      </form>
-    </div>
-    
-  </div>
-</section> -->
-
       <!-- CLASSROOM DATA TABLE -->
-
       <div
         class="card-group text-center container"
         id="classroom-classroom-container"
@@ -214,59 +152,38 @@
       </div>
 
       <!-- CHILD FORM -->
-      <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <h4>Child's Information</h4>
-            <form id="create-child-form" class="row g-3">
-              <div class="col-12">
-                <label for="inputName" class="form-label"></label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="input-name"
-                  placeholder="Child's name"
-                />
-              </div>
-              <div class="col-12">
-                <label for="inputAvatar" class="form-label"></label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="input-avatar"
-                  placeholder="Child's image URL"
-                />
-              </div>
-              <div class="col-12">
-                <label for="inputAge" class="form-label"></label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="input-age"
-                  placeholder="Child's age"
-                />
-              </div>
-              <div class="col-12">
-                <br />
-                <!-- <label for="classrooms">Select a classroom:</label> -->
-                <select id="select-classroom" name="classrooms">
-                  <option value="" disabled selected hidden>
-                    Select a classroom
-                  </option>
-                </select>
-                <br /><br />
-              </div>
-              <div class="col-12"></div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary">
-                  Add a child
-                </button>
-              </div>
-            </form>
-          </div>
+        <div class="class-form-container">
+          <form id="create-child-form" class="form">
+            <h2>Child's Information</h2>
+            <input
+              type="text"
+              name="childNameInput"
+              id="input-name"
+              placeholder="Child's name"
+            />              
+            <input
+              type="text"
+              name="childNameInput"
+              id="input-avatar"
+              placeholder="Child's picture"
+            />              
+            <input
+              type="text"
+              name="childNameInput"
+              id="input-age"
+              placeholder="Child's age"
+            />            
+            <select id="select-classroom" name="classrooms">
+              <option value="" disabled selected hidden>
+                Select a classroom
+              </option>
+            </select>                       
+            <button type="submit">
+              Add a child
+            </button>          
+          </form>
         </div>
-      </section>
-
+   
       <!-- CHILD DATA -->
 
       <!-- <div class="card-group">
