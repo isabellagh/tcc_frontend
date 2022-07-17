@@ -206,21 +206,21 @@ h2 {
 
 /* classrooms card */
 .classroom-container {
-  height: 950px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(224, 223, 230);
+  /* background: rgb(224, 223, 230); */
 }
 
 .classroom-wrapper {
   max-width: 1000px;
   margin: 0 auto;
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  grid-gap: 16px;
+  grid-gap: 18px;
   padding: 0 50px;
 }
 
@@ -261,8 +261,16 @@ h2 {
   margin-bottom: 15px;
 }
 
-.classroom-profile-btn {
-  border-radius: 50px;
+.classroom-delete-btn {
+  border-radius: 4px;
+  color: #fff;
+  background: rgba(221, 57, 8, 0.918);
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+  /* border-radius: 50px;
   background: rgba(107, 152, 221, 0.918);
   white-space: nowrap;
   padding: 6px 20px;
@@ -272,17 +280,13 @@ h2 {
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  text-decoration: none;
+  text-decoration: none; */
 }
 
 .btn-link {
   text-decoration: none;
   color: #010606;
 }
-
-
-
-
 
 
 

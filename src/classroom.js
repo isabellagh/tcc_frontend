@@ -1,38 +1,29 @@
 class Classroom {
-    
-  constructor(classroom) {        
-    this.id = classroom.id
-     // debugger
-    this.room_name = classroom.attributes.room_name
-    this.age = classroom.attributes.age
-    this.teacher_name = classroom.attributes.teacher_name
-    this.full = classroom.attributes.full
-    Classroom.all.push(this)
+  constructor(classroom) {
+    this.id = classroom.id;
+    // debugger
+    this.room_name = classroom.attributes.room_name;
+    this.age = classroom.attributes.age;
+    this.teacher_name = classroom.attributes.teacher_name;
+    this.full = classroom.attributes.full;
+    Classroom.all.push(this);
   }
 
-    renderClassroomTable() {
-        // debugger
-      return `
-      <span class="classroomCard" id="${this.id}">
-      <div id="classroomCard" class="card-group" style="width: 18rem;">
-        <div id="classroomInputs" class="card mb-4 shadow-sm">
-          <img src="https://playtolearnpreschool.us/wp-content/uploads/2015/07/IMG_4277-1024x732.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">${this.room_name}</h5>
-            <h5 class="card-title">Teacher: ${this.teacher_name}</h5>
-            <p class="card-text">Age group: ${this.age}</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div id="buttonsList" class="btn-group">
-                <ul>
-                  <button data-id=${this.id} id="delete-classroom-button" type="button" class="btn btn-sm btn-outline-secondary">Delete Classroom</button>
-                <ul/>
-            </div>
-            </div>
-          </div>
+  renderClassroomTable() {
+    // debugger
+    return `
+      <span class="classroom-container" id="${this.id}">
+      <div id="classroomCard" class="classroom-wrapper" style="width: 18rem;">
+        <div id="classroomInputs" class="classroom-card">
+          <img src="https://playtolearnpreschool.us/wp-content/uploads/2015/07/IMG_4277-1024x732.jpg" class="classroom-img" alt="...">
+          <h5 class="card-title">${this.room_name}</h5>
+          <h5 class="card-title">Teacher: ${this.teacher_name}</h5>
+          <p class="card-text">Age group: ${this.age}</p>
+          <button data-id=${this.id} id="delete-classroom-button" type="button" class="classroom-delete-btn">Delete Classroom</button>
         </div>
       </div>
-      <span/>`
-    }
+      <span/>`;
+  }
 }
 
 Classroom.all = [];
